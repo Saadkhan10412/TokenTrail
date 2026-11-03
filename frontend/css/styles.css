@@ -180,7 +180,7 @@ footer > * {
     gap: 0.45rem;
     padding: 0.55rem 0;
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.035em;
     text-transform: uppercase;
@@ -343,7 +343,7 @@ footer > * {
     background: var(--ink);
     color: var(--white);
     font-family: var(--mono);
-    font-size: 0.76rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: -0.025em;
     text-transform: uppercase;
@@ -386,8 +386,8 @@ footer > * {
    ========================================================= */
 
 .features {
-    padding-top: clamp(5rem, 10vw, 9rem);
-    padding-bottom: clamp(5rem, 9vw, 8rem);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .section-heading {
@@ -1105,5 +1105,94 @@ footer > * {
     .closing .primary-button {
         background: transparent;
         color: var(--ink);
+    }
+}
+
+/* FEATURES — EDITORIAL HEADING */
+
+.section-heading {
+    position: relative;
+
+    /* Full-width black banner */
+    width: calc(100% + 2 * var(--page-gutter));
+    max-width: none;
+    margin-left: calc(-1 * var(--page-gutter));
+    margin-right: calc(-1 * var(--page-gutter));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: clamp(3rem, 5vw, 4.5rem) 1.5rem;
+
+    background: var(--ink);
+    border: none;
+}
+
+/* Label */
+.section-heading .eyebrow {
+    margin-bottom: 1.25rem;
+    color: var(--red);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+}
+
+/* Main heading */
+.section-heading h2 {
+    max-width: 950px;
+    margin: 0 auto 1.2rem;
+
+    color: var(--paper);
+    font-family: var(--display);
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.085em;
+}
+
+/* Red highlight */
+.section-heading h2 span {
+    color: var(--red);
+}
+
+/* Subtitle */
+.section-heading > p:last-child {
+    margin: 0;
+    color: #B8B3AA;
+    font-size: 0.95rem;
+}
+
+/* Red accent */
+.section-heading::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 65px;
+    height: 3px;
+    background: var(--red);
+    transform: translateX(-50%);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .section-heading {
+        padding: 3.5rem 1.25rem;
+    }
+
+    .section-heading .eyebrow {
+        margin-bottom: 1.5rem;
+        font-size: 0.7rem;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(2.5rem, 9vw, 3.5rem);
+        line-height: 1.08;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 0.82rem;
     }
 }

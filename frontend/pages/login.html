@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | TokenTrail</title>
+
+    <link rel="stylesheet" href="../css/auth.css">
+    <script src="../js/auth.js" defer></script>
+</head>
+
+<body>
+
+    <main class="auth-layout">
+
+        <!-- LEFT BRANDING SECTION -->
+        <section class="auth-visual">
+
+            <nav class="auth-nav">
+                <a href="../index.html" class="logo">
+                    TokenTrail<span>.</span>
+                </a>
+            </nav>
+
+            <div class="visual-content">
+
+                <p class="eyebrow">YOUR GATEWAY TO THE AI FRONTIER</p>
+
+                <h1>
+                    Stay curious.<br>
+                    <span>Stay ahead.</span>
+                </h1>
+
+                <p class="visual-description">
+                    Explore the ideas, tools and technologies
+                    shaping the future of artificial intelligence.
+                </p>
+
+            </div>
+
+            <div class="visual-footer">
+                FOLLOW THE AI FRONTIER.
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT LOGIN SECTION -->
+        <section class="auth-form-section">
+
+            <div class="auth-form-container">
+
+                <p class="eyebrow">YOUR JOURNEY STARTS HERE</p>
+
+                <h2 id="form-title">Welcome back.</h2>
+
+                <p class="form-description" id="form-description">
+                    Sign in to continue exploring TokenTrail.
+                </p>
+
+
+                <!-- LOGIN FORM -->
+                <form id="login-form">
+
+                    <div class="form-group">
+                        <label for="login-email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="login-email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="login-password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="login-password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="login-password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        Sign in <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- SIGNUP FORM -->
+                <form id="signup-form" hidden>
+
+                    <div class="form-group">
+                        <label for="signup-name">Full name</label>
+
+                        <input
+                            type="text"
+                            id="signup-name"
+                            placeholder="Your full name"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signup-email">Email address</label>
+
+                        <input
+                            type="email"
+                            id="signup-email"
+                            placeholder="you@example.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="signup-password">Password</label>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="signup-password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                data-target="signup-password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth-button">
+                        Create account <span>→</span>
+                    </button>
+
+                </form>
+
+
+                <!-- FEEDBACK MESSAGE -->
+                <p id="form-message" role="status" aria-live="polite"></p>
+
+
+                <!-- SWITCH BETWEEN FORMS -->
+                <div class="auth-switch">
+
+                    <p id="switch-text">
+                        New to TokenTrail?
+                    </p>
+
+                    <button type="button" id="switch-auth">
+                        Create an account
+                    </button>
+
+                </div>
+
+
+                <a href="../index.html" class="back-home">
+                    ← Back to homepage
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
