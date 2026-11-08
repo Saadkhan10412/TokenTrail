@@ -44,6 +44,10 @@ passwordButtons.forEach(function (button) {
         }
     });
 });
+const redirectToDashboard = function () {
+    window.location.href = "dashboard.html";
+};
+
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const email = document.querySelector("#login-email").value.trim();
@@ -52,8 +56,9 @@ loginForm.addEventListener("submit", function (event) {
         formMessage.textContent = "Please fill in all fields.";
         return;
     }
-    formMessage.textContent = "Frontend validation passed! Backend authentication is not connected yet.";
+    formMessage.textContent = "Redirecting to dashboard...";
     console.log("Login email:", email);
+    redirectToDashboard();
 });
 signupForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -68,7 +73,8 @@ signupForm.addEventListener("submit", function (event) {
         formMessage.textContent = "Password must contain at least 8 characters.";
         return;
     }
-    formMessage.textContent = "Frontend validation passed! Registration backend is not connected yet.";
+    formMessage.textContent = "Redirecting to dashboard...";
     console.log("Signup name:", name);
     console.log("Signup email:", email);
+    redirectToDashboard();
 });

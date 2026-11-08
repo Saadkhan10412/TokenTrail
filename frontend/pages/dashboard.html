@@ -3,9 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Follow the AI frontier with TokenTrail. Discover AI news, repositories, model releases, research and tools.">
+    <title>TokenTrail — AI Discovery</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <script src="../js/app.js" defer></script>
 </head>
 <body>
-    
+    <!-- NAVIGATION -->
+    <header class="app-header" id="app-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                TokenTrail<span>.</span>
+            </a>
+            <div class="nav-links">
+                <a href="dashboard.html" class="active">Headlines</a>
+                <a href="snippets.html">Snippets</a>
+                <a href="explore.html">Explore AI</a>
+                <a href="know-ai.html">Know AI</a>
+                <a href="progress.html">My Progress</a>
+            </div>
+            <a href="progress.html" class="profile-link">
+                PROFILE ↗
+            </a>
+            <button class="mobile-menu-button" id="mobile-menu-button"
+                aria-label="Open navigation" aria-expanded="false">
+                ☰
+            </button>
+        </nav>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main class="dashboard">
+        <!-- DISCOVERY FEED -->
+        <section class="discovery-feed" id="headlines">
+            
+<div class="feed-heading">
+
+    <div class="feed-title-group">
+
+        <div class="feed-title-icon" id="feed-title-icon">
+            <img src="../assets/github.png" alt="GitHub">
+        </div>
+
+        <div>
+            <p class="eyebrow">01 / THE DISCOVERY DESK</p>
+            <h2 id="feed-heading">Trending repositories.</h2>
+            <p id="feed-description">
+                Open-source projects worth exploring.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+            <div class="feed-layout">
+                <!-- ACTIVE FEED -->
+                <div class="active-feed">
+                    <div class="feed-status">
+                        <span id="active-feed-label">TOP REPOS</span>
+                        <span id="feed-total"></span>
+                    </div>
+                    <div class="headline-list" id="headline-list">
+                        <!-- JavaScript renders the selected feed here -->
+                    </div>
+                </div>
+                <!-- CATEGORY SELECTOR -->
+                <aside class="feed-selector">
+                    <div class="selector-heading">
+                        <p class="eyebrow">SWITCH YOUR FEED</p>
+                    </div>
+                    <div class="feed-options">
+                        <button class="feed-option active"
+                            data-feed="repos" aria-pressed="true">
+                            <span class="option-number">01</span>
+                            <span class="option-content">
+                                <strong>Top Repos</strong>
+                                <small>Open-source discoveries</small>
+                            </span>
+                            <span class="option-arrow">↗</span>
+                        </button>
+                        <button class="feed-option"
+                            data-feed="industry" aria-pressed="false">
+                            <span class="option-number">02</span>
+                            <span class="option-content">
+                                <strong>AI Industry</strong>
+                                <small>Companies and developments</small>
+                            </span>
+                            <span class="option-arrow">↗</span>
+                        </button>
+                        <button class="feed-option"
+                            data-feed="releases" aria-pressed="false">
+                            <span class="option-number">03</span>
+                            <span class="option-content">
+                                <strong>Latest Releases</strong>
+                                <small>Models and updates</small>
+                            </span>
+                            <span class="option-arrow">↗</span>
+                        </button>
+                        <button class="feed-option"
+                            data-feed="research" aria-pressed="false">
+                            <span class="option-number">04</span>
+                            <span class="option-content">
+                                <strong>Research</strong>
+                                <small>Papers and breakthroughs</small>
+                            </span>
+                            <span class="option-arrow">↗</span>
+                        </button>
+                        <button class="feed-option"
+                            data-feed="developers" aria-pressed="false">
+                            <span class="option-number">05</span>
+                            <span class="option-content">
+                                <strong>Developer Updates</strong>
+                                <small>Frameworks and APIs</small>
+                            </span>
+                            <span class="option-arrow">↗</span>
+                        </button>
+                    </div>
+
+                </aside>
+            </div>
+        </section>
+        <!-- FEATURE DISCOVERY -->
+        <section class="feature-discovery">
+            <div class="feature-section-heading">
+                <p class="eyebrow">BEYOND THE HEADLINES</p>
+                <h2>
+                    There's more to<br>
+                    <span>discover.</span>
+                </h2>
+                <p>
+                    Explore, experiment and build your understanding of AI.
+                </p>
+            </div>
+            <div class="discovery-grid">
+                <!-- SNIPPETS -->
+                <a href="snippets.html"
+                    class="discovery-card snippets-card">
+                    <div class="card-top">
+                        <span class="card-label">01 / EXPERIMENT</span>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Snippets.</h3>
+                        <p>
+                            Discover emerging AI techniques, new architectures
+                            and innovative experiments — from Vectorless RAG
+                            to new methods of updating smaller models using
+                            larger models.
+                        </p>
+                    </div>
+                    <div class="card-bottom">
+                        <span>RAG · MODEL UPDATING · INNOVATIONS</span>
+                        <span class="card-symbol">✳</span>
+                    </div>
+                </a>
+                <!-- EXPLORE AI -->
+                <a href="explore.html"
+                    class="discovery-card explore-card">
+                    <div class="card-top">
+                        <span class="card-label">02 / DISCOVER</span>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Explore AI.</h3>
+                        <p>
+                            Find AI tools, compare capabilities and discover
+                            technologies that fit your needs and improve
+                            your workflow.
+                        </p>
+                    </div>
+                    <div class="card-bottom">
+                        <span>TOOLS · WORKFLOWS · CATEGORIES</span>
+                        <span class="card-symbol">⌘</span>
+                    </div>
+                </a>
+                <!-- KNOW AI -->
+                <a href="know-ai.html"
+                    class="discovery-card know-card">
+                    <div class="card-top">
+                        <span class="card-label">03 / UNDERSTAND</span>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Know AI.</h3>
+                        <p>
+                            Master AI foundations, from supervised and
+                            unsupervised learning to neural networks and
+                            the concepts behind artificial intelligence.
+                        </p>
+                    </div>
+                    <div class="card-bottom">
+                        <span>LEARN · PRACTICE · GROW</span>
+                        <span class="card-symbol">∑</span>
+                    </div>
+                </a>
+                <!-- MY PROGRESS -->
+                <a href="progress.html"
+                    class="discovery-card progress-card">
+                    <div class="card-top">
+                        <span class="card-label">04 / YOUR JOURNEY</span>
+                        <span class="card-arrow">↗</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>My Progress.</h3>
+                        <p>
+                            Your personal space for learning milestones,
+                            quiz scores, saved content and achievements
+                            across TokenTrail.
+                        </p>
+                    </div>
+                    <div class="card-bottom">
+                        <span>PROFILE · ACTIVITY · MILESTONES</span>
+                        <span class="card-symbol">↗</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="dashboard-footer">
+        <a href="../index.html" class="logo">
+            TokenTrail<span>.</span>
+        </a>
+        <p>Follow the AI frontier. Build knowledge that lasts.</p>
+        <span>© 2026 TOKENTRAIL</span>
+    </footer>
 </body>
 </html>
