@@ -1,0 +1,471 @@
+.progress-page {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 3rem var(--page-gutter) 1.5rem;
+}
+
+.page-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.page-heading h1 {
+    margin-bottom: 0.8rem;
+    font: 400 clamp(2.25rem, 5vw, 3.6rem)/1.05 var(--display);
+    letter-spacing: -0.06em;
+}
+
+.page-heading h1 span {
+    color: var(--red);
+}
+
+.page-heading p:last-child {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.date-label {
+    color: var(--muted);
+    font: 400 0.62rem var(--mono);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.preview-note {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+    padding: 0.85rem 1.1rem;
+    border: 1px solid var(--border);
+    background: #EFEBE3;
+    color: var(--muted);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.preview-note strong {
+    flex-shrink: 0;
+    color: var(--red);
+    font: 600 0.6rem var(--mono);
+    letter-spacing: 0.08em;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    background: var(--red);
+    color: var(--white);
+    font: 400 1.8rem var(--display);
+}
+
+.profile-info h2 {
+    margin: 0.4rem 0 0;
+    font: 400 1.4rem var(--display);
+    letter-spacing: -0.03em;
+}
+
+.profile-info .eyebrow {
+    margin: 0;
+}
+
+.profile-info p:last-child {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.level-info {
+    width: 260px;
+    margin-left: auto;
+}
+
+.level-info > span,
+.level-info small {
+    color: var(--muted);
+    font: 400 0.6rem var(--mono);
+    letter-spacing: 0.05em;
+}
+
+.level-info strong {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+}
+
+.level-track {
+    height: 5px;
+    margin: 0.7rem 0 0.45rem;
+    background: #EAE6DE;
+}
+
+.level-track div {
+    width: 65%;
+    height: 100%;
+    background: var(--red);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.stat-card {
+    min-height: 128px;
+    padding: 1.15rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.stat-label {
+    color: var(--muted);
+    font: 400 0.6rem var(--mono);
+    letter-spacing: 0.05em;
+}
+
+.stat-card > strong {
+    display: block;
+    margin-top: 0.9rem;
+    font: 400 2rem var(--display);
+    letter-spacing: -0.03em;
+}
+
+.stat-icon {
+    color: var(--red);
+    font-size: 1.2rem;
+}
+
+.stat-note {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--muted);
+    font-size: 0.65rem;
+}
+
+.progress-content,
+.lower-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.2rem;
+    margin-top: 2.6rem;
+}
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font: 400 1.55rem var(--display);
+    letter-spacing: -0.03em;
+}
+
+.activity-total {
+    color: var(--muted);
+    font: 400 0.6rem var(--mono);
+    letter-spacing: 0.05em;
+}
+
+.activity-card,
+.topics-card {
+    min-height: 250px;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.activity-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.activity-summary div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.activity-summary strong {
+    font: 400 1.8rem var(--display);
+}
+
+.activity-summary div span {
+    color: var(--muted);
+    font-size: 0.65rem;
+}
+
+.activity-chart {
+    height: 120px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    align-items: end;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-day {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.activity-bar {
+    width: min(35px, 75%);
+    min-height: 4px;
+    background: #E8DCD4;
+}
+
+.activity-bar.active {
+    background: var(--red);
+}
+
+.activity-day span {
+    color: var(--muted);
+    font: 400 0.58rem var(--mono);
+}
+
+.chart-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+    color: var(--muted);
+    font: 400 0.55rem var(--mono);
+}
+
+.legend-blocks {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.legend-blocks i {
+    width: 9px;
+    height: 9px;
+    background: #E8DCD4;
+}
+
+.legend-blocks i:nth-child(n + 3) {
+    background: var(--red);
+}
+
+.topics-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.15rem;
+}
+
+.topic-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.topic-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.topic-heading span:last-child {
+    color: var(--muted);
+    font: 400 0.62rem var(--mono);
+}
+
+.topic-track {
+    height: 5px;
+    background: #EAE6DE;
+}
+
+.topic-track div {
+    height: 100%;
+    background: var(--red);
+}
+
+.section-link {
+    color: var(--red);
+    font: 600 0.62rem var(--mono);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.recent-list {
+    border-top: 1px solid var(--border);
+}
+
+.recent-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.recent-item:hover .recent-title {
+    color: var(--red);
+}
+
+.recent-symbol {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: var(--red);
+    font: 400 0.7rem var(--display);
+}
+
+.recent-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.recent-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.recent-category {
+    color: var(--muted);
+    font: 400 0.56rem var(--mono);
+    letter-spacing: 0.05em;
+}
+
+.recent-arrow {
+    margin-left: auto;
+    color: var(--red);
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.achievement {
+    min-height: 112px;
+    padding: 0.9rem;
+    border: 1px solid var(--border);
+    background: var(--white);
+}
+
+.achievement-mark {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    color: var(--red);
+    font: 600 0.62rem var(--mono);
+}
+
+.achievement h3 {
+    margin: 0.7rem 0 0;
+    font-size: 0.76rem;
+}
+
+.achievement p {
+    margin: 0.3rem 0 0;
+    color: var(--muted);
+    font-size: 0.64rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .page-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-heading h1 {
+        font-size: 2.3rem;
+    }
+
+    .preview-note {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .profile-section {
+        flex-wrap: wrap;
+        padding: 1.1rem;
+    }
+
+    .profile-avatar {
+        width: 52px;
+        height: 52px;
+    }
+
+    .level-info {
+        width: 100%;
+        margin: 0.8rem 0 0;
+    }
+
+    .stats-grid {
+        gap: 0.55rem;
+    }
+
+    .stat-card {
+        min-height: 112px;
+        padding: 0.85rem;
+    }
+
+    .stat-card > strong {
+        font-size: 1.7rem;
+    }
+
+    .progress-content,
+    .lower-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    .activity-card,
+    .topics-card {
+        padding: 1.05rem;
+    }
+
+    .activity-chart {
+        gap: 0.45rem;
+    }
+}

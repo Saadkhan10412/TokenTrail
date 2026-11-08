@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+/* Shared shell for every in-product page: tokens, typography, header, footer. */
+
+:root {
+    color-scheme: light;
+
+    --ink: #111111;
+    --paper: #F7F5EF;
+    --red: #E63936;
+    --white: #FFFFFF;
+    --muted: #65615C;
+    --border: #D8D2C8;
+
+    --display: 'Archivo Black', Impact, sans-serif;
+    --body: 'Space Grotesk', Arial, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+
+    --page-gutter: clamp(1.25rem, 5.5vw, 6rem);
+    --content-width: 1440px;
+    --transition: 180ms ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 16px/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+p {
+    overflow-wrap: break-word;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 4px;
+}
+
+.eyebrow {
+    margin: 0 0 0.85rem;
+    color: var(--red);
+    font: 500 0.68rem/1.5 var(--mono);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+/* Header and navigation */
+
+.app-header {
+    position: relative;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: var(--content-width);
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 0 var(--page-gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo {
+    font: 400 1.7rem/1 var(--display);
+    letter-spacing: -0.08em;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--red);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.2vw, 2.5rem);
+}
+
+.nav-links a,
+.profile-link {
+    position: relative;
+    padding: 0.5rem 0;
+    font: 600 0.68rem var(--mono);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    transition: color var(--transition);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"],
+.profile-link:hover {
+    color: var(--red);
+}
+
+.nav-links a:hover::after,
+.nav-links a[aria-current="page"]::after {
+    transform: scaleX(1);
+}
+
+.mobile-menu-button {
+    display: none;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+/* Footer */
+
+.app-footer {
+    padding: 2rem max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.app-footer .logo {
+    font-size: 1.3rem;
+}
+
+.app-footer p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.app-footer > span {
+    color: var(--muted);
+    font: 400 0.62rem var(--mono);
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 760px) {
+    .navbar {
+        min-height: 64px;
+        gap: 1rem;
+    }
+
+    .nav-links,
+    .profile-link {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .app-header.menu-open .navbar {
+        flex-wrap: wrap;
+        padding-bottom: 1rem;
+    }
+
+    .app-header.menu-open .nav-links {
+        order: 3;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem 1rem;
+        padding-top: 0.9rem;
+        border-top: 1px solid var(--border);
+    }
+
+    .app-header.menu-open .profile-link {
+        order: 4;
+        display: block;
+        width: 100%;
+    }
+
+    .app-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-block: 1.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

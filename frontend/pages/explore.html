@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7F5EF">
+    <title>Explore AI | TokenTrail</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/explore.css">
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/explore.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <nav class="navbar" aria-label="Main">
+            <a href="dashboard.html" class="logo">TokenTrail<span>.</span></a>
+
+            <div class="nav-links" id="primary-navigation">
+                <a href="dashboard.html">Headlines</a>
+                <a href="snippets.html">Snippets</a>
+                <a href="explore.html" aria-current="page">Explore AI</a>
+                <a href="know-ai.html">Know AI</a>
+                <a href="progress.html">My Progress</a>
+            </div>
+
+            <a href="progress.html" class="profile-link">My Profile ↗</a>
+
+            <button type="button" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        </nav>
+    </header>
+
+    <main class="explore-page">
+        <section class="explore-hero">
+            <h1>Find your next<br><span>AI model.</span></h1>
+            <p class="hero-description">Search, compare and shortlist models by how you want to use them — free, paid, or on your own machine.</p>
+        </section>
+
+        <section class="model-explorer">
+            <div class="explorer-top">
+                <div>
+                    <p class="eyebrow">CHOOSE YOUR ACCESS</p>
+                    <h2>What works for you?</h2>
+                </div>
+                <span class="model-count" id="model-count">00 MODELS</span>
+            </div>
+
+            <div class="mode-switch" role="group" aria-label="Model access type">
+                <button type="button" class="mode-button" data-mode="free" aria-pressed="true">
+                    <span>01</span> Free
+                    <small>Zero-cost access</small>
+                </button>
+                <button type="button" class="mode-button" data-mode="paid" aria-pressed="false">
+                    <span>02</span> Paid
+                    <small>Premium capabilities</small>
+                </button>
+                <button type="button" class="mode-button" data-mode="local" aria-pressed="false">
+                    <span>03</span> Local
+                    <small>Run on your machine</small>
+                </button>
+            </div>
+
+            <section class="local-config" id="local-config" hidden>
+                <div class="config-heading">
+                    <p class="eyebrow">YOUR HARDWARE / YOUR MODELS</p>
+                    <h3>What's under the hood?</h3>
+                    <p>Enter your system specifications. Estimates use only the values below — TokenTrail doesn't detect your hardware or benchmark models.</p>
+                </div>
+
+                <form id="hardware-form">
+                    <div class="hardware-grid">
+                        <label>
+                            Operating system
+                            <select id="os" required>
+                                <option value="Windows">Windows</option>
+                                <option value="Linux">Linux</option>
+                                <option value="macOS">macOS</option>
+                            </select>
+                        </label>
+                        <label>
+                            Processor
+                            <input id="cpu" type="text" placeholder="e.g. Intel i7 / Ryzen 7 / Apple M3">
+                        </label>
+                        <label>
+                            System RAM
+                            <select id="ram" required>
+                                <option value="8">8 GB</option>
+                                <option value="16" selected>16 GB</option>
+                                <option value="32">32 GB</option>
+                                <option value="64">64 GB</option>
+                                <option value="128">128 GB</option>
+                            </select>
+                        </label>
+                        <label>
+                            GPU
+                            <input id="gpu" type="text" placeholder="e.g. RTX 5060 / Integrated / None">
+                        </label>
+                        <label>
+                            GPU VRAM
+                            <select id="vram">
+                                <option value="0">No dedicated GPU</option>
+                                <option value="4">4 GB</option>
+                                <option value="6">6 GB</option>
+                                <option value="8" selected>8 GB</option>
+                                <option value="12">12 GB</option>
+                                <option value="16">16 GB</option>
+                                <option value="24">24 GB</option>
+                                <option value="32">32 GB</option>
+                            </select>
+                        </label>
+                        <label>
+                            Available storage
+                            <select id="storage">
+                                <option value="10">10 GB</option>
+                                <option value="20" selected>20 GB</option>
+                                <option value="50">50 GB</option>
+                                <option value="100">100 GB</option>
+                                <option value="200">200 GB</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button class="primary-button" type="submit">Find models for my system ↗</button>
+                </form>
+
+                <div class="hardware-results" id="hardware-results" hidden>
+                    <div class="results-heading">
+                        <div>
+                            <p class="eyebrow">YOUR COMPATIBILITY REPORT</p>
+                            <h3>Models for your machine.</h3>
+                        </div>
+                        <button id="edit-hardware" class="text-button">Edit configuration ↗</button>
+                    </div>
+                    <p class="hardware-summary" id="hardware-summary"></p>
+                    <div id="local-model-list" class="model-grid"></div>
+                </div>
+            </section>
+
+            <section class="directory" id="directory">
+                <div class="directory-toolbar">
+                    <div class="search-box">
+                        <span>⌕</span>
+                        <input id="model-search" type="search" placeholder="Search models, providers, tasks...">
+                    </div>
+                    <select id="category-filter" aria-label="Filter by category">
+                        <option value="all">All categories</option>
+                        <option value="Chat">Chat</option>
+                        <option value="Coding">Coding</option>
+                        <option value="Reasoning">Reasoning</option>
+                        <option value="Multimodal">Multimodal</option>
+                        <option value="Image">Image generation</option>
+                    </select>
+                    <select id="sort-models" aria-label="Sort models">
+                        <option value="featured">Featured</option>
+                        <option value="quality">Quality: high to low</option>
+                        <option value="speed">Speed: high to low</option>
+                    </select>
+                </div>
+
+                <div class="directory-heading">
+                    <div>
+                        <p class="eyebrow" id="directory-eyebrow">ZERO-COST ACCESS</p>
+                        <h2 id="directory-title">Free models.</h2>
+                        <p id="directory-description">Explore capable models without a subscription.</p>
+                    </div>
+                    <button type="button" class="compare-button" id="compare-button" disabled>Compare selected <span id="compare-count">0</span></button>
+                </div>
+
+                <p class="compare-status" id="compare-status" role="status"></p>
+
+                <div class="model-grid" id="model-grid"></div>
+                <p class="empty-state" id="empty-state" hidden>No models match your search. Try another filter.</p>
+            </section>
+        </section>
+
+        <section class="compare-panel" id="compare-panel" hidden>
+            <div class="compare-heading">
+                <div>
+                    <p class="eyebrow">MODEL FACE-OFF</p>
+                    <h2>Compare models.</h2>
+                </div>
+                <button id="close-compare" class="text-button">Close ×</button>
+            </div>
+            <div id="comparison-content"></div>
+        </section>
+
+    </main>
+
+    <footer class="app-footer">
+        <a href="../index.html" class="logo">TokenTrail<span>.</span></a>
+        <p>Follow the AI frontier. Build knowledge that lasts.</p>
+        <span>© 2026 TOKENTRAIL</span>
+    </footer>
+</body>
+</html>

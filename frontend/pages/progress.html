@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7F5EF">
+    <title>My Progress | TokenTrail</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/progress.css">
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/progress.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <nav class="navbar" aria-label="Main">
+            <a href="dashboard.html" class="logo">TokenTrail<span>.</span></a>
+
+            <div class="nav-links" id="primary-navigation">
+                <a href="dashboard.html">Headlines</a>
+                <a href="snippets.html">Snippets</a>
+                <a href="explore.html">Explore AI</a>
+                <a href="know-ai.html">Know AI</a>
+                <a href="progress.html" aria-current="page">My Progress</a>
+            </div>
+
+            <a href="#profile" class="profile-link">My Profile ↗</a>
+
+            <button type="button" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        </nav>
+    </header>
+
+    <main class="progress-page">
+        <section class="page-heading">
+            <div>
+                <h1>Progress, <span>not perfection.</span></h1>
+                <p>Every discovery adds up. Here's how far you've come.</p>
+            </div>
+            <span class="date-label" id="current-date"></span>
+        </section>
+
+        <p class="preview-note">
+            <strong>PREVIEW</strong>
+            Learning activity isn't tracked yet. Everything on this page is sample
+            data, here to show how the dashboard will work.
+        </p>
+
+        <section class="profile-section" id="profile">
+            <div class="profile-avatar">S</div>
+            <div class="profile-info">
+                <p class="eyebrow">YOUR TOKENTRAIL PROFILE</p>
+                <h2 id="user-name">Saad Khan</h2>
+                <p>Curious mind. Constant learner.</p>
+            </div>
+            <div class="level-info">
+                <span>YOUR LEVEL</span>
+                <strong>AI Explorer</strong>
+                <div class="level-track">
+                    <div></div>
+                </div>
+                <small>650 / 1000 XP TO NEXT LEVEL</small>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span class="stat-label">TOTAL XP</span>
+                <strong>2,350</strong>
+                <span class="stat-note">Knowledge points earned</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-label">DAY STREAK</span>
+                <strong>07 <span class="stat-icon">↗</span></strong>
+                <span class="stat-note">Keep the momentum going</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-label">SNIPPETS EXPLORED</span>
+                <strong>48</strong>
+                <span class="stat-note">Ideas discovered</span>
+            </article>
+            <article class="stat-card">
+                <span class="stat-label">QUIZZES COMPLETED</span>
+                <strong>12</strong>
+                <span class="stat-note">Knowledge put to the test</span>
+            </article>
+        </section>
+
+        <section class="progress-content">
+            <div class="activity-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR CONSISTENCY</p>
+                        <h2>Learning activity.</h2>
+                    </div>
+                    <span class="activity-total">THIS WEEK</span>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-summary">
+                        <div>
+                            <strong>18</strong>
+                            <span>learning sessions this week</span>
+                        </div>
+                    </div>
+                    <div class="activity-chart" id="activity-chart"></div>
+                    <div class="chart-legend">
+                        <span>LESS</span>
+                        <div class="legend-blocks">
+                            <i></i><i></i><i></i><i></i><i></i>
+                        </div>
+                        <span>MORE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topics-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">WHAT YOU'RE LEARNING</p>
+                        <h2>Topic progress.</h2>
+                    </div>
+                </div>
+                <div class="topics-card" id="topic-list"></div>
+            </div>
+        </section>
+
+        <section class="lower-grid">
+            <div class="recent-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">YOUR RECENT DISCOVERIES</p>
+                        <h2>Recently explored.</h2>
+                    </div>
+                    <a href="snippets.html" class="section-link">Explore more ↗</a>
+                </div>
+                <div class="recent-list" id="recent-list"></div>
+            </div>
+
+            <div class="achievements-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">EXAMPLE ACHIEVEMENTS</p>
+                        <h2>Achievements.</h2>
+                    </div>
+                </div>
+                <div class="achievement-grid" id="achievement-grid"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="app-footer">
+        <a href="../index.html" class="logo">TokenTrail<span>.</span></a>
+        <p>Follow the AI frontier. Build knowledge that lasts.</p>
+        <span>© 2026 TOKENTRAIL</span>
+    </footer>
+</body>
+</html>

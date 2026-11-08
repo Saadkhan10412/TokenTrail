@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F7F5EF">
+    <title>Snippets | TokenTrail</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/snippets.css">
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/snippets.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <nav class="navbar" aria-label="Main">
+            <a href="dashboard.html" class="logo">TokenTrail<span>.</span></a>
+
+            <div class="nav-links" id="primary-navigation">
+                <a href="dashboard.html">Headlines</a>
+                <a href="snippets.html" aria-current="page">Snippets</a>
+                <a href="explore.html">Explore AI</a>
+                <a href="know-ai.html">Know AI</a>
+                <a href="progress.html">My Progress</a>
+            </div>
+
+            <a href="progress.html" class="profile-link">My Profile ↗</a>
+
+            <button type="button" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+        </nav>
+    </header>
+
+    <main class="snippets-page">
+        <section class="snippets-heading">
+        </section>
+
+        <section class="reel-layout">
+            <div class="reel-container" id="reel-container" role="region" aria-label="AI snippets">
+                <div class="loading-state">Loading snippets...</div>
+            </div>
+
+            <aside class="reel-controls">
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span class="control-label">YOUR FEED</span>
+                <span class="control-hint">SCROLL TO EXPLORE</span>
+                <div class="control-buttons">
+                    <button id="prev-reel" aria-label="Previous snippet">↑</button>
+                    <button id="next-reel" aria-label="Next snippet">↓</button>
+                </div>
+                <span class="control-hint">↑ / ↓ TO NAVIGATE</span>
+            </aside>
+        </section>
+
+    </main>
+
+    <dialog class="snippet-dialog" id="snippet-dialog" aria-labelledby="dialog-title">
+        <div class="dialog-head">
+            <span id="dialog-meta"></span>
+            <button type="button" class="dialog-close" id="dialog-close" aria-label="Close topic">Close</button>
+        </div>
+        <div class="dialog-body">
+            <h2 id="dialog-title"></h2>
+            <p class="dialog-lead" id="dialog-lead"></p>
+            <div class="takeaway">
+                <span>THE TAKEAWAY</span>
+                <p id="dialog-takeaway"></p>
+            </div>
+            <div class="dialog-detail" id="dialog-detail"></div>
+            <div class="dialog-block">
+                <span>RELATED CONCEPTS</span>
+                <div class="dialog-related" id="dialog-related"></div>
+            </div>
+            <p class="dialog-note">Sample learning content written for this preview. Not a verified curriculum.</p>
+        </div>
+    </dialog>
+
+    <footer class="app-footer">
+        <a href="../index.html" class="logo">TokenTrail<span>.</span></a>
+        <p>Follow the AI frontier. Build knowledge that lasts.</p>
+        <span>© 2026 TOKENTRAIL</span>
+    </footer>
+</body>
+</html>

@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
 
-/* =========================================================
-   TOKENTRAIL — CYBERNEO EDITORIAL SYSTEM
-   Independent AI culture magazine / underground tech-zine
-   ========================================================= */
-
-/* 01. DESIGN TOKENS
-   ========================================================= */
+/* TokenTrail landing page. */
 
 :root {
     color-scheme: light;
@@ -21,26 +15,13 @@
     --body: 'Space Grotesk', Arial, sans-serif;
     --mono: 'IBM Plex Mono', monospace;
 
-    --space-1: 0.5rem;
-    --space-2: 1rem;
-    --space-3: 1.5rem;
-    --space-4: 2rem;
-    --space-5: 3rem;
-    --space-6: 4rem;
-    --space-7: 6rem;
-    --space-8: 8rem;
-
     --page-gutter: clamp(1.25rem, 5.5vw, 6rem);
     --content-width: 1440px;
 
     --rule: 1px solid var(--ink);
     --rule-heavy: 2px solid var(--ink);
-
     --transition: 180ms ease;
 }
-
-/* 02. RESET & BASE
-   ========================================================= */
 
 *,
 *::before,
@@ -50,23 +31,18 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 2rem;
 }
 
 body {
     margin: 0;
-    min-width: 320px;
-    background-color: var(--paper);
+    background: var(--paper);
     color: var(--ink);
-    font-family: var(--body);
-    font-size: 16px;
-    line-height: 1.6;
+    font: 400 16px/1.6 var(--body);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
 }
 
-body::selection,
-body *::selection {
+*::selection {
     background: var(--red);
     color: var(--white);
 }
@@ -78,21 +54,13 @@ a {
 
 button,
 input,
-textarea,
-select {
+select,
+textarea {
     font: inherit;
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible {
-    outline: 3px solid var(--red);
-    outline-offset: 5px;
+button {
+    cursor: pointer;
 }
 
 img,
@@ -101,10 +69,10 @@ svg {
     max-width: 100%;
 }
 
-p,
 h1,
 h2,
-h3 {
+h3,
+p {
     margin-top: 0;
 }
 
@@ -112,10 +80,10 @@ p {
     overflow-wrap: break-word;
 }
 
-h1,
-h2,
-h3 {
-    color: var(--ink);
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 5px;
 }
 
 main {
@@ -125,24 +93,18 @@ main {
 
 main > section,
 .navbar,
-footer {
-    width: 100%;
-}
-
-main > section,
-.navbar,
-footer {
+.footer {
     padding-inline: var(--page-gutter);
 }
 
-main > section > *,
-.navbar > *,
-footer > * {
-    max-width: var(--content-width);
+.eyebrow {
+    margin-bottom: 1.5rem;
+    font: 500 clamp(0.75rem, 1vw, 0.95rem)/1.5 var(--mono);
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
 }
 
-/* 03. NAVIGATION
-   ========================================================= */
+/* Navigation */
 
 .navbar {
     position: relative;
@@ -151,7 +113,7 @@ footer > * {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-3);
+    gap: 1.5rem;
     border-bottom: var(--rule);
     background: var(--paper);
 }
@@ -159,11 +121,8 @@ footer > * {
 .logo {
     display: inline-flex;
     align-items: baseline;
-    font-family: var(--display);
-    font-size: clamp(1.45rem, 2vw, 1.9rem);
-    font-weight: 400;
+    font: 400 clamp(1.45rem, 2vw, 1.9rem)/1 var(--display);
     letter-spacing: -0.085em;
-    line-height: 1;
     white-space: nowrap;
 }
 
@@ -177,12 +136,10 @@ footer > * {
     position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
     padding: 0.55rem 0;
-    font-family: var(--mono);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: -0.035em;
+    color: var(--ink);
+    font: 600 0.9rem var(--mono);
+    letter-spacing: -0.02em;
     text-transform: uppercase;
     transition: color var(--transition);
 }
@@ -208,8 +165,7 @@ footer > * {
     transform: scaleX(1);
 }
 
-/* 04. HERO — EDITORIAL COVER
-   ========================================================= */
+/* Hero */
 
 .hero {
     position: relative;
@@ -223,7 +179,6 @@ footer > * {
     border-bottom: var(--rule-heavy);
 }
 
-/* Restrained print-registration detail. */
 .hero::before {
     position: absolute;
     top: 2.2rem;
@@ -264,16 +219,6 @@ footer > * {
     content: "";
 }
 
-.eyebrow {
-    margin-bottom: 1.5rem;
-    font-family: var(--mono);
-    font-size: clamp(1rem, 1.4vw, 1.8rem);
-    font-weight: 100;
-    line-height: 1.5;
-    letter-spacing: 0.055em;
-    text-transform: uppercase;
-}
-
 .hero > .eyebrow {
     position: relative;
     padding-left: 1.2rem;
@@ -296,10 +241,7 @@ footer > * {
     width: 100%;
     max-width: 1180px;
     margin-bottom: clamp(1.5rem, 3vw, 2.6rem);
-    font-family: var(--display);
-    font-size: clamp(4rem, 11.8vw, 10.5rem);
-    font-weight: 400;
-    line-height: 0.88;
+    font: 400 clamp(4rem, 11.8vw, 10.5rem)/0.88 var(--display);
     letter-spacing: -0.095em;
     overflow-wrap: normal;
 }
@@ -307,11 +249,10 @@ footer > * {
 .hero h1 span {
     position: relative;
     display: inline-block;
-    color: var(--red);
     padding-right: 0.08em;
+    color: var(--red);
 }
 
-/* An imperfect underline, like a red marker dragged across paper. */
 .hero h1 span::after {
     position: absolute;
     right: 0;
@@ -342,10 +283,8 @@ footer > * {
     border: 1px solid var(--ink);
     background: var(--ink);
     color: var(--white);
-    font-family: var(--mono);
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
+    font: 600 0.9rem var(--mono);
+    letter-spacing: -0.01em;
     text-transform: uppercase;
     transition:
         background var(--transition),
@@ -377,13 +316,11 @@ footer > * {
 .hero-note {
     margin: 1.25rem 0 0;
     color: var(--muted);
-    font-family: var(--mono);
-    font-size: 0.68rem;
+    font: 400 0.68rem var(--mono);
     letter-spacing: 0.025em;
 }
 
-/* 05. FEATURES — EDITORIAL INDEX
-   ========================================================= */
+/* Features */
 
 .features {
     padding-top: 0;
@@ -391,30 +328,41 @@ footer > * {
 }
 
 .section-heading {
-    display: grid;
-    grid-template-columns: minmax(140px, 0.65fr) minmax(0, 2fr);
-    column-gap: clamp(1.5rem, 5vw, 6rem);
-    align-items: start;
-    padding-bottom: clamp(2.5rem, 5vw, 4.5rem);
-    border-bottom: var(--rule-heavy);
+    position: relative;
+    width: calc(100% + 2 * var(--page-gutter));
+    margin-left: calc(-1 * var(--page-gutter));
+    padding: clamp(3rem, 5vw, 4.5rem) 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--ink);
+}
+
+.section-heading::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 65px;
+    height: 3px;
+    background: var(--red);
+    content: "";
+    transform: translateX(-50%);
 }
 
 .section-heading .eyebrow {
-    grid-column: 1;
-    grid-row: 1;
-    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
     color: var(--red);
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
 }
 
 .section-heading h2 {
-    grid-column: 2;
-    grid-row: 1;
-    max-width: 900px;
-    margin-bottom: 1.25rem;
-    font-family: var(--display);
-    font-size: clamp(2.8rem, 6.5vw, 6.2rem);
-    font-weight: 400;
-    line-height: 0.98;
+    max-width: 950px;
+    margin: 0 auto 1.1rem;
+    color: var(--paper);
+    font: 400 clamp(2.8rem, 6vw, 5.2rem)/1.02 var(--display);
     letter-spacing: -0.085em;
 }
 
@@ -423,11 +371,10 @@ footer > * {
 }
 
 .section-heading > p:last-child {
-    grid-column: 2;
-    grid-row: 2;
-    margin-bottom: 0;
-    color: var(--muted);
-    font-size: 1rem;
+    max-width: 520px;
+    margin: 0;
+    color: #B8B3AA;
+    font-size: 0.92rem;
 }
 
 .feature-grid {
@@ -438,16 +385,14 @@ footer > * {
 .feature-card {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(130px, 0.65fr) minmax(0, 2fr) minmax(125px, 0.55fr);
-    grid-template-rows: auto auto auto;
+    grid-template-columns: minmax(140px, 0.55fr) minmax(0, 2fr);
     column-gap: clamp(1.5rem, 5vw, 6rem);
     align-items: start;
-    padding: clamp(2.25rem, 4.5vw, 4rem) 0;
+    padding: clamp(2rem, 4vw, 3.5rem) 0;
     border-bottom: var(--rule);
     transition:
         padding-left var(--transition),
-        padding-right var(--transition),
-        background-color var(--transition);
+        padding-right var(--transition);
 }
 
 .feature-card::before {
@@ -472,57 +417,22 @@ footer > * {
 
 .feature-number {
     grid-column: 1;
-    grid-row: 1;
-    padding-top: 0.55rem;
+    grid-row: 1 / span 3;
+    padding-top: 0.5rem;
     color: var(--muted);
-    font-family: var(--mono);
-    font-size: clamp(0.7rem, 1vw, 1rem);;
-    font-weight: 1000;
-    line-height: 1.7;
-    letter-spacing: 0.01em;
+    font: 500 0.72rem/1.7 var(--mono);
+    letter-spacing: 0.02em;
 }
 
 .feature-number::first-letter {
     color: var(--red);
 }
 
-.feature-icon {
-    display: inline-flex;
-    grid-column: 3;
-    grid-row: 1 / span 2;
-    width: 42px;
-    height: 42px;
-    align-items: center;
-    justify-content: center;
-    justify-self: end;
-    margin-top: 0.15rem;
-    border: 1px solid var(--ink);
-    color: var(--red);
-    font-family: var(--mono);
-    font-size: 1.5rem;
-    line-height: 1;
-    transition:
-        background-color var(--transition),
-        color var(--transition),
-        border-color var(--transition);
-}
-
-
-
-.feature-card:hover .feature-icon {
-    border-color: var(--red);
-    background: var(--red);
-    color: var(--white);
-}
-
 .feature-card h3 {
     grid-column: 2;
     grid-row: 1;
-    margin-bottom: 1rem;
-    font-family: var(--display);
-    font-size: clamp(2rem, 4.2vw, 4.2rem);
-    font-weight: 400;
-    line-height: 1;
+    margin-bottom: 0.9rem;
+    font: 400 clamp(2rem, 4.2vw, 3.9rem)/1 var(--display);
     letter-spacing: -0.075em;
     transition: color var(--transition);
 }
@@ -534,10 +444,10 @@ footer > * {
 .feature-description {
     grid-column: 2;
     grid-row: 2;
-    max-width: 490px;
-    margin-bottom: 1.5rem;
+    max-width: 520px;
+    margin-bottom: 1.4rem;
     color: var(--muted);
-    font-size: 0.97rem;
+    font-size: 0.95rem;
     line-height: 1.8;
 }
 
@@ -550,9 +460,8 @@ footer > * {
     align-items: center;
     gap: 0.65rem;
     padding-bottom: 0.3rem;
-    font-family: var(--mono);
-    font-size: 1rem;
-    font-weight: 600;
+    font: 600 0.75rem var(--mono);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
     transition: color var(--transition);
 }
@@ -578,8 +487,7 @@ footer > * {
     transform: scaleX(1);
 }
 
-/* 06. CLOSING — FINAL EDITORIAL SPREAD
-   ========================================================= */
+/* Closing */
 
 .closing {
     position: relative;
@@ -620,14 +528,10 @@ footer > * {
 }
 
 .closing h2 {
-    position: relative;
     max-width: 1100px;
     margin-bottom: clamp(2.5rem, 5vw, 4rem);
     color: var(--paper);
-    font-family: var(--display);
-    font-size: clamp(3.3rem, 9vw, 8.6rem);
-    font-weight: 400;
-    line-height: 0.96;
+    font: 400 clamp(3.3rem, 9vw, 8.2rem)/0.96 var(--display);
     letter-spacing: -0.09em;
 }
 
@@ -656,27 +560,21 @@ footer > * {
     color: var(--white);
 }
 
-/* 07. FOOTER
-   ========================================================= */
-/* FOOTER */
+/* Footer */
 
 .footer {
-    min-height: auto;
     display: grid;
     grid-template-columns: 1.5fr 1fr 0.8fr;
     align-items: start;
-    gap: 40px;
-    padding-top: 55px;
-    padding-bottom: 25px;
+    gap: 2.5rem;
+    padding-top: 3.4rem;
+    padding-bottom: 1.6rem;
     background: var(--paper);
     border-top: var(--rule);
 }
 
-/* BRAND */
-
 .footer-brand .logo {
-    display: inline-flex;
-    margin-bottom: 12px;
+    margin-bottom: 0.8rem;
     font-size: 1.7rem;
 }
 
@@ -686,36 +584,28 @@ footer > * {
     color: var(--muted);
     font-size: 0.85rem;
     line-height: 1.7;
-    text-align: left;
 }
 
-/* ABOUT */
-
 .footer-about p {
-    margin: 0 0 7px;
+    margin: 0 0 0.45rem;
     color: var(--muted);
     font-size: 0.85rem;
     line-height: 1.6;
-    text-align: left;
 }
 
 .footer-about strong {
     color: var(--ink);
 }
 
-/* SOCIAL LINKS */
-
 .footer-links {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 0.75rem;
 }
 
 .footer-links a {
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    font-weight: 500;
+    font: 500 0.8rem var(--mono);
     transition: color var(--transition);
 }
 
@@ -723,66 +613,25 @@ footer > * {
     color: var(--red);
 }
 
-/* COPYRIGHT */
-
 .footer-bottom {
     grid-column: 1 / -1;
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-    padding-top: 20px;
-    margin-top: 15px;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding-top: 1.2rem;
     border-top: var(--rule);
 }
 
 .footer-bottom p {
     margin: 0;
     color: var(--muted);
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    text-align: left;
+    font: 400 0.68rem var(--mono);
 }
 
-/* RESPONSIVE */
-
-@media (max-width: 700px) {
-    .footer {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 20px;
-    }
-
-    .footer-links {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding-top: 35px;
-    }
-
-    .footer-links {
-        grid-column: auto;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-    }
-}
-/* 08. RESPONSIVE — TABLET
-   ========================================================= */
+/* Responsive */
 
 @media (max-width: 900px) {
-    :root {
-        --page-gutter: clamp(1.5rem, 5vw, 3rem);
-    }
-
     .hero {
         min-height: auto;
         padding-top: 7rem;
@@ -793,35 +642,10 @@ footer > * {
         font-size: clamp(4.2rem, 12.5vw, 7.5rem);
     }
 
-    .section-heading {
-        grid-template-columns: minmax(100px, 0.5fr) minmax(0, 2fr);
-        column-gap: 2rem;
-    }
-
-    .section-heading h2 {
-        font-size: clamp(3rem, 7.5vw, 5rem);
-    }
-
-    .feature-card {
-        grid-template-columns: minmax(110px, 0.55fr) minmax(0, 2fr) 48px;
-        column-gap: 1.75rem;
-    }
-
-    .feature-card h3 {
-        font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-    }
-
     .feature-description {
         font-size: 0.93rem;
     }
-
-    .closing h2 {
-        font-size: clamp(3.8rem, 10vw, 6.8rem);
-    }
 }
-
-/* 09. RESPONSIVE — MOBILE
-   ========================================================= */
 
 @media (max-width: 600px) {
     :root {
@@ -861,7 +685,7 @@ footer > * {
 
     .hero > .eyebrow {
         max-width: calc(100% - 55px);
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .hero h1 {
@@ -888,35 +712,27 @@ footer > * {
         font-size: 0.62rem;
     }
 
-    .features {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
-
     .section-heading {
-        display: block;
-        padding-bottom: 2rem;
+        padding: 3.2rem 1.25rem;
     }
 
     .section-heading .eyebrow {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.7rem;
     }
 
     .section-heading h2 {
-        margin-bottom: 1rem;
-        font-size: clamp(2.8rem, 10.5vw, 4.3rem);
-        line-height: 1;
+        font-size: clamp(2.5rem, 9vw, 3.5rem);
+        line-height: 1.08;
     }
 
     .section-heading > p:last-child {
-        max-width: 300px;
-        font-size: 0.92rem;
+        font-size: 0.82rem;
     }
 
     .feature-card {
-        grid-template-columns: minmax(0, 1fr) 42px;
-        column-gap: 1rem;
-        padding: 2rem 0;
+        grid-template-columns: 1fr;
+        padding: 1.9rem 0;
     }
 
     .feature-card:hover {
@@ -927,41 +743,31 @@ footer > * {
     .feature-number {
         grid-column: 1;
         grid-row: 1;
-        margin-bottom: 1.2rem;
+        margin-bottom: 1rem;
         padding-top: 0;
         font-size: 0.62rem;
     }
 
-    .feature-icon {
-        grid-column: 2;
-        grid-row: 1;
-        width: 36px;
-        height: 36px;
-        margin-top: -0.35rem;
-        font-size: 1.3rem;
-    }
-
     .feature-card h3 {
-        grid-column: 1 / -1;
+        grid-column: 1;
         grid-row: 2;
-        margin-bottom: 0.9rem;
-        font-size: clamp(2.3rem, 9vw, 3.5rem);
+        margin-bottom: 0.8rem;
+        font-size: clamp(2.3rem, 9vw, 3.2rem);
         line-height: 1.05;
     }
 
     .feature-description {
-        grid-column: 1 / -1;
+        grid-column: 1;
         grid-row: 3;
         max-width: 390px;
         margin-bottom: 1.2rem;
-        font-size: 0.91rem;
+        font-size: 0.9rem;
         line-height: 1.8;
     }
 
     .explore-button {
-        grid-column: 1 / -1;
+        grid-column: 1;
         grid-row: 4;
-        min-height: 32px;
         font-size: 0.67rem;
     }
 
@@ -981,54 +787,36 @@ footer > * {
     }
 
     .closing::after {
-        right: var(--page-gutter);
         bottom: 2rem;
         width: 70px;
     }
 
-    footer {
-        min-height: 125px;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+    .footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.25rem;
+        padding-top: 2.5rem;
     }
 
-    footer p {
-        max-width: 290px;
-        font-size: 0.75rem;
-        text-align: left;
+    .footer-links {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 }
 
-/* 10. RESPONSIVE — SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 360px) {
-    :root {
-        --page-gutter: 1rem;
-    }
-
-    .navbar {
-        gap: 0.75rem;
-    }
-
-    .logo {
-        font-size: 1.35rem;
-    }
-
-    .login {
-        font-size: 0.58rem;
-    }
-
+@media (max-width: 400px) {
     .hero h1 {
-        font-size: 3.35rem;
+        font-size: 3.3rem;
     }
 
     .section-heading h2 {
-        font-size: 2.65rem;
+        font-size: 2.5rem;
     }
 
     .feature-card h3 {
@@ -1038,10 +826,15 @@ footer > * {
     .closing h2 {
         font-size: 2.9rem;
     }
-}
 
-/* 11. ACCESSIBILITY & REDUCED MOTION
-   ========================================================= */
+    .footer {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        grid-column: auto;
+    }
+}
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -1053,9 +846,6 @@ footer > * {
         transition-duration: 0.01ms !important;
     }
 }
-
-/* 12. PRINT
-   ========================================================= */
 
 @media print {
     :root {
@@ -1070,11 +860,6 @@ footer > * {
         color: var(--ink);
     }
 
-    .navbar,
-    footer {
-        border-color: var(--ink);
-    }
-
     .hero,
     .features,
     .closing {
@@ -1083,7 +868,8 @@ footer > * {
 
     .hero::before,
     .hero::after,
-    .closing::after {
+    .closing::after,
+    .navbar .login {
         display: none;
     }
 
@@ -1105,94 +891,5 @@ footer > * {
     .closing .primary-button {
         background: transparent;
         color: var(--ink);
-    }
-}
-
-/* FEATURES — EDITORIAL HEADING */
-
-.section-heading {
-    position: relative;
-
-    /* Full-width black banner */
-    width: calc(100% + 2 * var(--page-gutter));
-    max-width: none;
-    margin-left: calc(-1 * var(--page-gutter));
-    margin-right: calc(-1 * var(--page-gutter));
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    padding: clamp(3rem, 5vw, 4.5rem) 1.5rem;
-
-    background: var(--ink);
-    border: none;
-}
-
-/* Label */
-.section-heading .eyebrow {
-    margin-bottom: 1.25rem;
-    color: var(--red);
-    font-size: 0.8rem;
-    letter-spacing: 0.18em;
-}
-
-/* Main heading */
-.section-heading h2 {
-    max-width: 950px;
-    margin: 0 auto 1.2rem;
-
-    color: var(--paper);
-    font-family: var(--display);
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
-    font-weight: 400;
-    line-height: 1.02;
-    letter-spacing: -0.085em;
-}
-
-/* Red highlight */
-.section-heading h2 span {
-    color: var(--red);
-}
-
-/* Subtitle */
-.section-heading > p:last-child {
-    margin: 0;
-    color: #B8B3AA;
-    font-size: 0.95rem;
-}
-
-/* Red accent */
-.section-heading::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 65px;
-    height: 3px;
-    background: var(--red);
-    transform: translateX(-50%);
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-    .section-heading {
-        padding: 3.5rem 1.25rem;
-    }
-
-    .section-heading .eyebrow {
-        margin-bottom: 1.5rem;
-        font-size: 0.7rem;
-    }
-
-    .section-heading h2 {
-        font-size: clamp(2.5rem, 9vw, 3.5rem);
-        line-height: 1.08;
-    }
-
-    .section-heading > p:last-child {
-        font-size: 0.82rem;
     }
 }
