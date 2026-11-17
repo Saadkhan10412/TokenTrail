@@ -101,7 +101,7 @@ textarea:focus-visible {
     padding: 0 var(--page-gutter);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 2rem;
 }
 
@@ -119,6 +119,18 @@ textarea:focus-visible {
     display: flex;
     align-items: center;
     gap: clamp(1rem, 2.2vw, 2.5rem);
+}
+
+.nav-links {
+    margin-left: auto;
+}
+
+.nav-links + .profile-link {
+    margin-left: auto;
+}
+
+.profile-link + .profile-link {
+    margin-left: 1rem;
 }
 
 .nav-links a,

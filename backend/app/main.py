@@ -1,11 +1,13 @@
-
+from app.routers.snippets import router as snippets_router
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from app.routers.users import router as users_router
 from app.routers.profiles import router as profiles_router
 from app.database import engine
-
+from app.routers.articles import router as articles_router
+from app.routers.categories import router as categories_router
+from app.routers.sources import router as sources_router
 
 app = FastAPI(
     title="TokenTrail API",
@@ -15,6 +17,10 @@ app = FastAPI(
 
 app.include_router(users_router)
 app.include_router(profiles_router)
+app.include_router(articles_router)
+app.include_router(categories_router)
+app.include_router(sources_router)
+app.include_router(snippets_router)
 
 origins = [
     "http://localhost:5500",

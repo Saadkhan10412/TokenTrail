@@ -19,3 +19,12 @@ class LoginRequest(BaseModel):
 
 class RefreshRequest(BaseModel):
     refresh_token: str = Field(min_length=1)
+
+
+class ForgotPasswordRequest(BaseModel):
+    email: str = Field(min_length=3)
+
+
+class ResetPasswordRequest(BaseModel):
+    access_token: str = Field(min_length=1)
+    password: str = Field(min_length=8)

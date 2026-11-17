@@ -1,5 +1,6 @@
 
 import httpx
+from urllib.parse import urlencode
 
 from fastapi import HTTPException
 from app.config import settings
@@ -91,7 +92,6 @@ def login_user(email: str, password: str):
     )
 
 
-
 def verify_access_token(access_token: str):
     try:
         return supabase_request(
@@ -110,8 +110,6 @@ def verify_access_token(access_token: str):
         raise
 
 
-
-
 def refresh_user_token(refresh_token: str):
     try:
         return supabase_request(
@@ -128,3 +126,30 @@ def refresh_user_token(refresh_token: str):
                 detail="Invalid or expired refresh token"
             ) from error
         raise
+
+
+def forgot_password_user(email: str):
+    redirect_url = (
+        f"{settings.FRONTEND_URL.rstrip('/')}/pages/reset-password.html"
+    )
+
+    endpoint = "recover?" + urlencode({
+        "redirect_to": redirect_url
+    })
+
+    return supabase_request(
+        "POST",
+        endpoint,
+        json={"email": email}
+    )
+
+
+def reset_user_password(access_token: str, password: str):
+    return supabase_request(
+        "PUT",
+        "user",
+        headers={
+            "Authorization": f"Bearer {access_token}"
+        },
+        json={"password": password}
+    )

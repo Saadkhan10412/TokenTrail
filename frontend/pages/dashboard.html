@@ -8,8 +8,10 @@
     <title>TokenTrail — AI Discovery</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/app.css">
+    
     <script src="../js/nav.js" defer></script>
     <script src="../js/app.js" defer></script>
+    <script src="../js/auth-guard.js" defer></script>
 </head>
 
 <body>
@@ -22,10 +24,10 @@
                 <a href="snippets.html">Snippets</a>
                 <a href="explore.html">Explore AI</a>
                 <a href="know-ai.html">Know AI</a>
-                <a href="progress.html">My Progress</a>
             </div>
 
             <a href="progress.html" class="profile-link">My Profile ↗</a>
+            <a href="#" class="profile-link" id="logout-button">Log out ↗</a>
 
             <button type="button" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
         </nav>
@@ -47,7 +49,6 @@
                 <div class="feed-toolbar">
                     <span id="active-feed-label">TOP REPOS</span>
                     <div class="feed-meta">
-                        <span class="sample-note">SAMPLE DATA · NOT LIVE</span>
                         <span id="feed-total">10 SAMPLE ENTRIES</span>
                     </div>
                 </div>

@@ -54,6 +54,7 @@ class Article(Base):
     image_url: Mapped[str | None] = mapped_column(Text)
     author: Mapped[str | None] = mapped_column(String)
     published_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    feed_category: Mapped[str | None] = mapped_column(String)
     content_hash: Mapped[str | None] = mapped_column(String)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)

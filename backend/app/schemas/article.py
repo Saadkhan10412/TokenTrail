@@ -30,6 +30,7 @@ class ArticleResponse(BaseModel):
     image_url: str | None
     author: str | None
     published_at: datetime | None
+    feed_category: str | None
     created_at: datetime
     source: SourceSummary | None
     category: CategorySummary | None

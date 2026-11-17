@@ -1,3 +1,4 @@
+
 .auth-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -128,6 +129,24 @@
     font: 600 0.66rem var(--mono);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -0.8rem;
+}
+
+.forgot-password a {
+    color: var(--red);
+    font-size: 0.78rem;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.forgot-password a:hover {
+    color: var(--ink);
+    text-decoration: underline;
 }
 
 .auth-button {

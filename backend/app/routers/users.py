@@ -2,8 +2,22 @@
 from fastapi import APIRouter, status, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
-from app.schemas.user import RegisterRequest, LoginRequest, RefreshRequest
-from app.services.auth import register_user, login_user, verify_access_token, refresh_user_token
+from app.schemas.user import (
+    RegisterRequest,
+    LoginRequest,
+    RefreshRequest,
+    ForgotPasswordRequest,
+    ResetPasswordRequest
+)
+
+from app.services.auth import (
+    register_user,
+    login_user,
+    verify_access_token,
+    refresh_user_token,
+    forgot_password_user,
+    reset_user_password
+)
 
 
 router = APIRouter(
@@ -82,4 +96,25 @@ def refresh_token(data: RefreshRequest):
             "id": result["user"]["id"],
             "email": result["user"]["email"]
         }
+    }
+
+
+@router.post("/forgot-password")
+def forgot_password(data: ForgotPasswordRequest):
+    forgot_password_user(data.email)
+
+    return {
+        "message": "If an account exists with this email, a password recovery link will be sent."
+    }
+
+
+@router.post("/reset-password")
+def reset_password(data: ResetPasswordRequest):
+    reset_user_password(
+        access_token=data.access_token,
+        password=data.password
+    )
+
+    return {
+        "message": "Password updated successfully. You can now sign in."
     }
